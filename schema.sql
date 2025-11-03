@@ -33,3 +33,29 @@ CREATE TABLE ItensPedido (
         REFERENCES Produtos(id_produto)
         ON DELETE RESTRICT 
 );
+
+INSERT INTO Produtos (nome, descricao, preco, categoria)
+VALUES
+    ('Espresso Duplo', 'Café forte e encorpado', 7.50, 'Bebida Quente'),
+    ('Cappuccino', 'Espresso, leite vaporizado e espuma', 12.00, 'Bebida Quente'),
+    ('Pão de Queijo', 'Porção com 3 unidades', 9.00, 'Comida'),
+    ('Suco de Laranja', 'Natural, 500ml', 10.00, 'Bebida Fria');
+
+INSERT INTO Pedidos (nome_cliente, status)
+VALUES
+    ('Ana Silva', 'Concluído'),
+    ('Bruno Costa', 'Em preparo'),
+    ('Carla Mendes', 'Pendente');
+
+INSERT INTO ItensPedido (id_pedido, id_produto, quantidade)
+VALUES
+    (1, 2, 1),
+    (1, 3, 1);
+
+INSERT INTO ItensPedido (id_pedido, id_produto, quantidade)
+VALUES
+    (2, 1, 2);
+
+INSERT INTO ItensPedido (id_pedido, id_produto, quantidade)
+VALUES
+    (3, 4, 1);
