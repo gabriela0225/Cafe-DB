@@ -59,3 +59,12 @@ VALUES
 INSERT INTO ItensPedido (id_pedido, id_produto, quantidade)
 VALUES
     (3, 4, 1);
+
+SELECT 
+    P.nome_cliente,
+    PR.nome AS produto,
+    IP.quantidade
+FROM Pedidos AS P
+JOIN ItensPedido AS IP ON P.id_pedido = IP.id_pedido
+JOIN Produtos AS PR ON IP.id_produto = PR.id_produto
+WHERE P.nome_cliente = 'Ana Silva';
